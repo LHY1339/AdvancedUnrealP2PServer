@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{c2333af7-5cf9-4379-9d07-db394b9755b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ServerMain">
+      <UniqueIdentifier>{db08ad3d-d213-42de-b995-c3eb7a5e9107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Static">
+      <UniqueIdentifier>{8f9d2a8c-d34a-4436-b50a-3e5841c68e0f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerMain.cpp">
+      <Filter>Source\ServerMain</Filter>
+    </ClCompile>
+    <ClCompile Include="StringStatic.cpp">
+      <Filter>Source\Static</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ServerMain.h">
+      <Filter>Source\ServerMain</Filter>
+    </ClInclude>
+    <ClInclude Include="StringStatic.h">
+      <Filter>Source\Static</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
