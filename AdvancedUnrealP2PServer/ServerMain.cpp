@@ -20,21 +20,23 @@ void AServerMain::InitNetwork()
 	{
 		exit(-1);
 	}
-	//Init Socket
-	Socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-	if (Socket == INVALID_SOCKET)
+	while (true)
 	{
-		exit(-1);
-	}
-	//Init Server Addr
-	LocalAddr.sin_family = AF_INET;
-	LocalAddr.sin_addr.s_addr = INADDR_ANY;
-	LocalAddr.sin_port = htons(Port);
-	if (bind(Socket, (sockaddr*)&LocalAddr, sizeof(LocalAddr)) == SOCKET_ERROR)
-	{
+		//Init Socket
+		Socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+		if (Socket == INVALID_SOCKET)
+		{
+			exit(-1);
+		}
+		//Init Server Addr
+		LocalAddr.sin_family = AF_INET;
+		LocalAddr.sin_addr.s_addr = INADDR_ANY;
+		LocalAddr.sin_port = htons(Port);
+		if (bind(Socket, (sockaddr*)&LocalAddr, sizeof(LocalAddr)) != SOCKET_ERROR)
+		{
+			break;
+		}
 		Port++;
-		InitNetwork();
-		return;
 	}
 	std::cout << "Server Start At Port : " << Port << std::endl;
 }
